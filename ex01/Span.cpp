@@ -110,5 +110,7 @@ int Span::longestSpanSTL(void) const
 		msg << "vector with "<< this->_cur_nums << "numbers";
 		throw std::length_error(msg.str());
 	}
-		return (std::max(this->_integers) - std::min(this->_integers));
+	std::vector<int>::const_iterator maxi = std::max_element(this->_integers.begin(), this->_integers.end()); 
+	std::vector<int>::const_iterator mini = std::min_element(this->_integers.begin(), this->_integers.end()); 
+		return ( *maxi - *mini);
 }

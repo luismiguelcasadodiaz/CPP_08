@@ -12,6 +12,8 @@ class Span
 		void addNumber(int const n);
 		template<typename InputIterator>
 		void addNumber(InputIterator begin, InputIterator end);
+		template<typename InputIterator>
+		void addNumberSTL(InputIterator begin, InputIterator end);
 		int shortestSpan(void) const;
 		int longestSpan(void) const;
 		int longestSpanSTL(void) const;		

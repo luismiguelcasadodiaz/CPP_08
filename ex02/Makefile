@@ -6,7 +6,7 @@
 #    By: luicasad <luicasad@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/30 13:07:33 by luicasad          #+#    #+#              #
-#    Updated: 2025/11/09 12:30:44 by luicasad         ###   ########.fr        #
+#    Updated: 2025/11/10 18:14:06 by luicasad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,17 +42,18 @@ REQUIRED_DIRS	= $(OBJDIR)
 #                               COMPILER SETUP                                 #
 # ============================================================================ #
 CC 				= c++ -std=c++98 
-#CC 				= clang++ -std=c++98
+CC 				= clang++ -std=c++98
 WRNFL			= -Wall -Wextra -Werror -MMD -MP #-Wshadow #-fsanitize=address
-DBGFL			= #-g3  -pg
+#DBGFL			= -g3  -pg
 CFLGS			= $(DBGFL) $(WRNFL) -c 
 #HEADS			= -I$(INCDIR)
 LFLGS 			= #-fsanitize=address
 
-#HEADERS		=	easyfind.hpp \
+HEADERS		=	MutantStack.hpp \
 
 
-SRCS_TARGET	= 	main.cpp
+SRCS_TARGET	= 	MutantStack.cpp \
+				main.cpp
 
 
 FILE_TARGET = $(addprefix $(SRCDIR_TARGET), $(SRCS_TARGET))
