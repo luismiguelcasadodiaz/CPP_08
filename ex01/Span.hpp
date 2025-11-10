@@ -10,10 +10,18 @@ class Span
 		Span & operator=(Span const & other);
         Span(unsigned int N);
 		void addNumber(int const n);
+		template<typename InputIterator>
+		void addNumber(InputIterator begin, InputIterator end);
 		int shortestSpan(void) const;
 		int longestSpan(void) const;
 	private:
-		std::vector<int> integers;
+		std::vector<int> _integers;
+		unsigned int _max_nums;
+		unsigned int _cur_nums;
+		int _min;
+		int _max;
 };
 
+#include "Span.tpp"
 #endif
+

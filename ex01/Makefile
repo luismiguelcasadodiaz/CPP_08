@@ -6,7 +6,7 @@
 #    By: luicasad <luicasad@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/30 13:07:33 by luicasad          #+#    #+#              #
-#    Updated: 2025/11/09 12:30:44 by luicasad         ###   ########.fr        #
+#    Updated: 2025/11/09 23:38:40 by luicasad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,10 +49,11 @@ CFLGS			= $(DBGFL) $(WRNFL) -c
 #HEADS			= -I$(INCDIR)
 LFLGS 			= #-fsanitize=address
 
-#HEADERS		=	easyfind.hpp \
+HEADERS		=	Span.hpp \
 
 
-SRCS_TARGET	= 	main.cpp
+SRCS_TARGET	= 	Span.cpp \
+				main.cpp
 
 
 FILE_TARGET = $(addprefix $(SRCDIR_TARGET), $(SRCS_TARGET))
