@@ -42,9 +42,9 @@ REQUIRED_DIRS	= $(OBJDIR)
 #                               COMPILER SETUP                                 #
 # ============================================================================ #
 CC 				= c++ -std=c++98 
-#CC 				= clang++ -std=c++98
+CC 				= clang++ -std=c++98
 WRNFL			= -Wall -Wextra -Werror -MMD -MP #-Wshadow #-fsanitize=address
-DBGFL			= #-g3  -pg
+#DBGFL			= -g3  -pg
 CFLGS			= $(DBGFL) $(WRNFL) -c 
 #HEADS			= -I$(INCDIR)
 LFLGS 			= #-fsanitize=address

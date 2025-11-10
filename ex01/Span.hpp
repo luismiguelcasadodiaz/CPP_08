@@ -14,6 +14,7 @@ class Span
 		void addNumber(InputIterator begin, InputIterator end);
 		int shortestSpan(void) const;
 		int longestSpan(void) const;
+		int longestSpanSTL(void) const;		
 	private:
 		std::vector<int> _integers;
 		unsigned int _max_nums;

@@ -101,3 +101,14 @@ int Span::longestSpan(void) const
 		return (this->_max - this->_min);
 }
 
+int Span::longestSpanSTL(void) const
+{
+	if (this->_cur_nums < 2)
+	{
+		std::stringstream msg;
+		msg << "Can not calculate shortest span in a ";
+		msg << "vector with "<< this->_cur_nums << "numbers";
+		throw std::length_error(msg.str());
+	}
+		return (std::max(this->_integers) - std::min(this->_integers));
+}
