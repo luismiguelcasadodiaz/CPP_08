@@ -92,7 +92,8 @@ int main()
         MutantStack<int, std::list<int> >::iterator it = mstack.begin();
         MutantStack<int, std::list<int> >::iterator ite = mstack.end();
         ++it;
-        --it;        while (it != ite)
+        --it;        
+        while (it != ite)
         {
             std::cout << *it << std::endl;
             ++it;
