@@ -5,9 +5,7 @@ Templated containers, iterators, algorithms
 
 # Span
 
-Develop a Span class that can store a maximum of N integers. N is an unsigned int variable and will be the only parameter passed to the constructor.
-This class will have a member function called addNumber() to add a single number
-to the Span. It will be used in order to fill it. 
+Develop a Span class that is capable of storing a maximum of $N$ integers. $N$ shall be an unsigned integer variable and will constitute the sole parameter passed to the constructor. This class is to be furnished with a member function denominated addNumber() whose purpose is to append a single integer to the Span. This function shall serve to populate the container.
 
 Any attempt to add a new element if there are already N elements stored should throw an exception.
 
@@ -21,9 +19,9 @@ shortestSpan() o **Mínima Diferencia Absoluta ($\Delta_{min}$) en un Conjunto O
 
 longestSpan() = Max - Min
 
-They will respectively find out the shortest span or the longest span (or distance, if you prefer) between all the numbers stored, and return it. 
+They shall, respectively, ascertain and return either the shortest span or the longest span (or distance, if one prefers that nomenclature) existing between all of the numbers that have been stored.
 
-If there are no numbers stored, or only one, no span can be found. Thus, throw an exception.
+Should there be no numbers stored, or if there is only a single number, no span may be legitimately determined. In such a circumstance, an exception must be thrown.
 
 
 ### STL usage (Subject instructions)
@@ -34,13 +32,13 @@ and the Algorithms (defined in header <algorithm>) — whenever they are appropr
 Moreover, you should use them as much as you can.
 
 ### Custom versus STL
-My span class updates min and max in each insert. I did this to return a fast answers to longestspan() question.
+My Span class is designed to update the minimum and maximum values with each insertion. I elected this approach to ensure a rapid response when answering the longestSpan() query. 
 
-I did it in such way cause the algorithm of MIN/MAX element loops all elements to calculate it.
+The reasoning for this design choice is that the standard algorithm for calculating the minimum or maximum element typically iterates through all elements. 
 
-A time comparison of both methods states that my custom span is faster than STL call to min_element() and max_element().
+A time comparison conducted between the two methods affirms that my custom Span implementation yields a faster result than utilising the STL calls to min_element() and max_element(). 
 
-But in the opposite side, mi 10 000 elements insert process takes longer than the vector.insert() member.
+Conversely, the process of inserting ten thousand ($\text{10,000}$) elements into my class demands more time than the execution of the standard vector::insert() member function.
 
 This are the results.
 
@@ -58,15 +56,11 @@ STL    Span   Time : 0.000221s
 
 # MutantStack
 
-A MutantStack is an iterable stack. 
+The MutantStack is to be defined as an iterable stack structure.
 
-The trick in this exercise is to know that class stack has a protected atribute.
-This protected attribute is the container that supports the stack.
-As the container is accessible we can get their iterators.
+The crux of this exercise lies in the comprehension that the standard std::stack class possesses a protected attribute. This protected attribute is, in fact, the underlying container that supports the stack's functionality. Since this underlying container is directly accessible (via inheritance or a similar mechanism), we are thus able to retrieve its iterators.
 
-A stack is a container adaptor that adapts a `Sequencecontainer` (vector, list or deque) to provide a LIFO data structure.
-
-Default container to adapt is deque,
+A stack is fundamentally a container adaptor designed to modify a Sequence Container (such as a vector, list, or deque) to offer a Last-In, First-Out (LIFO) data structure. The default container selected for this adaptation is the deque.
 ```c++
 template <class T, class Container = deque<T> > class stack;
 ```
@@ -79,7 +73,7 @@ template <class T, class Container = deque<T> > class stack;
 |std::list	|Lista doblemente enlazada (nodos)|	O(n) para acceder a un elemento|	O(1) en cualquier posición si tienes el iterador|	Alto (punteros extra por nodo)	|Adecuado para muchas inserciones/borrados en posiciones arbitrarias|
 
 
-As stack is a class template it can be instantiated wiht different containerd
+As the stack is defined as a class template, it retains the capacity to be instantiated (or declared) using a variety of different containers.
 
 ```c++
 template <typename T, typename Container = std::deque<T> >
